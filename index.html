@@ -1,643 +1,799 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>DZ Imports | Nueva era, misma pasión</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050505;
-      color: white;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* BARRA SUPERIOR */
-
-    .topbar {
-      background: #111;
-      border-bottom: 1px solid #222;
-      padding: 10px 5%;
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      color: #ccc;
-    }
-
-    /* ENCABEZADO */
-
-    header {
-      padding: 22px 5%;
-      display: flex;
-      align-items: center;
-      gap: 35px;
-      border-bottom: 1px solid #222;
-    }
-
-    .logo {
-      min-width: 190px;
-    }
-
-    .logo h1 {
-      font-size: 32px;
-      letter-spacing: 2px;
-    }
-
-    .logo p {
-      font-size: 10px;
-      letter-spacing: 3px;
-      color: #aaa;
-      margin-top: 4px;
-    }
-
-    .search {
-      flex: 1;
-      max-width: 600px;
-      position: relative;
-    }
-
-    .search input {
-      width: 100%;
-      padding: 15px 50px 15px 20px;
-      background: #151515;
-      border: 1px solid #333;
-      border-radius: 8px;
-      color: white;
-      font-size: 15px;
-    }
-
-    .search span {
-      position: absolute;
-      right: 18px;
-      top: 13px;
-      font-size: 20px;
-    }
-
-    .account {
-      white-space: nowrap;
-      color: #ddd;
-    }
-
-    /* MENÚ */
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 35px;
-      padding: 18px 10px;
-      border-bottom: 1px solid #222;
-      overflow-x: auto;
-    }
-
-    nav a {
-      font-size: 14px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    nav a:hover {
-      color: #00e676;
-    }
-
-    /* HERO */
-
-    .hero {
-      margin: 25px auto;
-      width: 95%;
-      min-height: 430px;
-      border: 1px solid #333;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      padding: 50px;
-      background:
-        linear-gradient(90deg, #080808 25%, rgba(0,0,0,.55)),
-        radial-gradient(circle at 75% 50%, #333, #080808 60%);
-    }
-
-    .hero-content {
-      max-width: 600px;
-    }
-
-    .hero small {
-      color: #aaa;
-      letter-spacing: 4px;
-    }
-
-    .hero h2 {
-      font-size: clamp(45px, 7vw, 85px);
-      line-height: .9;
-      margin: 20px 0;
-      text-transform: uppercase;
-    }
-
-    .hero p {
-      color: #bbb;
-      margin-bottom: 25px;
-    }
-
-    .button {
-      display: inline-block;
-      background: #00d96b;
-      color: #000;
-      padding: 14px 25px;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    /* PRODUCTOS */
-
-    .section {
-      width: 95%;
-      margin: 45px auto;
-    }
-
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .section-title h2 {
-      font-size: 25px;
-    }
-
-    .section-title a {
-      color: #aaa;
-      font-size: 14px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-    }
-
-    .product {
-      background: #111;
-      border: 1px solid #242424;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: .2s;
-    }
-
-    .product:hover {
-      transform: translateY(-4px);
-      border-color: #444;
-    }
-
-    .product-image {
-      width: 100%;
-      height: 220px;
-      background: linear-gradient(135deg, #222, #0b0b0b);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #666;
-      font-size: 50px;
-    }
-
-    .product-info {
-      padding: 15px;
-    }
-
-    .product-info h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    .price {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 13px;
-    }
-
-    .buy {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      background: #00d96b;
-      color: #000;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .buy:hover {
-      background: #00f078;
-    }
-
-    /* BANNERS */
-
-    .banners {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .banner {
-      min-height: 260px;
-      border: 1px solid #333;
-      border-radius: 9px;
-      padding: 35px;
-      background: linear-gradient(135deg, #1d1d1d, #070707);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .banner h2 {
-      font-size: 38px;
-      text-transform: uppercase;
-      margin: 10px 0 20px;
-    }
-
-    .banner p {
-      color: #aaa;
-      margin-bottom: 20px;
-    }
-
-    .banner .button {
-      width: fit-content;
-      background: white;
-    }
-
-    /* MARCAS */
-
-    .brands {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 12px;
-    }
-
-    .brand {
-      height: 100px;
-      background: #111;
-      border: 1px solid #252525;
-      border-radius: 7px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 17px;
-      font-weight: bold;
-    }
-
-    /* BENEFICIOS */
-
-    .benefits {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
-      margin-top: 60px;
-    }
-
-    .benefit {
-      padding: 30px;
-      text-align: center;
-      border-right: 1px solid #222;
-    }
-
-    .benefit:last-child {
-      border-right: none;
-    }
-
-    .benefit h3 {
-      margin-bottom: 8px;
-    }
-
-    .benefit p {
-      color: #888;
-      font-size: 14px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 45px 5%;
-      color: #777;
-      text-align: center;
-    }
-
-    footer strong {
-      color: white;
-    }
-
-    /* CELULAR */
-
-    @media (max-width: 800px) {
-
-      .topbar {
-        font-size: 10px;
-        gap: 10px;
-      }
-
-      header {
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      .logo {
-        width: 100%;
-      }
-
-      .search {
-        order: 3;
-        width: 100%;
-      }
-
-      nav {
-        justify-content: flex-start;
-        gap: 22px;
-      }
-
-      .hero {
-        min-height: 400px;
-        padding: 30px;
-      }
-
-      .hero h2 {
-        font-size: 48px;
-      }
-
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .product-image {
-        height: 180px;
-      }
-
-      .banners {
-        grid-template-columns: 1fr;
-      }
-
-      .brands {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .benefits {
-        grid-template-columns: 1fr;
-      }
-
-      .benefit {
-        border-right: none;
-        border-bottom: 1px solid #222;
-      }
-    }
-
-    @media (max-width: 450px) {
-
-      .products {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-
-      .product-image {
-        height: 150px;
-      }
-
-      .product-info {
-        padding: 10px;
-      }
-
-      .product-info h3 {
-        font-size: 14px;
-      }
-
-      .price {
-        font-size: 16px;
-      }
-
-      .brands {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DZ Imports | Nueva era, misma pasión</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#050505;
+  color:white;
+}
+
+button{
+  font-family:inherit;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* HEADER */
+header{
+  background:#050505;
+  border-bottom:1px solid #222;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.top{
+  padding:22px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:5px;
+}
+
+.slogan{
+  color:#aaa;
+  font-size:11px;
+  letter-spacing:5px;
+  margin-top:6px;
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.search{
+  background:#111;
+  border:1px solid #333;
+  color:white;
+  border-radius:12px;
+  padding:13px 15px;
+  width:230px;
+  outline:none;
+}
+
+.cartBtn{
+  background:#111;
+  color:white;
+  border:1px solid #333;
+  padding:13px 18px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+nav{
+  display:flex;
+  gap:30px;
+  overflow-x:auto;
+  padding:16px 5%;
+  border-top:1px solid #181818;
+}
+
+nav button{
+  background:none;
+  border:0;
+  color:white;
+  font-weight:bold;
+  font-size:14px;
+  white-space:nowrap;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  margin:35px 5%;
+  min-height:420px;
+  border:1px solid #333;
+  border-radius:20px;
+  padding:55px;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(circle at 80% 40%,#222 0%,#080808 35%,#050505 70%);
+}
+
+.hero small{
+  color:#aaa;
+  letter-spacing:6px;
+}
+
+.hero h1{
+  font-size:64px;
+  line-height:.95;
+  margin:20px 0;
+}
+
+.hero p{
+  color:#bbb;
+  font-size:18px;
+  max-width:560px;
+  line-height:1.5;
+}
+
+.hero button{
+  margin-top:25px;
+  background:#00e676;
+  border:0;
+  color:#000;
+  padding:17px 28px;
+  border-radius:10px;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* PRODUCTS */
+.section{
+  padding:20px 5% 60px;
+}
+
+.sectionTitle{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.sectionTitle h2{
+  font-size:30px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.product{
+  background:#0c0c0c;
+  border:1px solid #292929;
+  border-radius:15px;
+  overflow:hidden;
+  transition:.2s;
+}
+
+.product:hover{
+  transform:translateY(-4px);
+  border-color:#555;
+}
+
+.productImage{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  background:#111;
+}
+
+.productInfo{
+  padding:16px;
+}
+
+.productInfo h3{
+  font-size:17px;
+  margin-bottom:8px;
+}
+
+.price{
+  font-size:21px;
+  font-weight:bold;
+  margin-bottom:6px;
+}
+
+.size{
+  color:#999;
+  font-size:13px;
+  margin-bottom:14px;
+}
+
+.add{
+  width:100%;
+  border:0;
+  background:white;
+  color:#000;
+  padding:12px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.add:hover{
+  background:#00e676;
+}
+
+/* BANNER */
+.banner{
+  margin:10px 5% 60px;
+  border:1px solid #333;
+  border-radius:18px;
+  padding:30px;
+  text-align:center;
+  background:#0c0c0c;
+}
+
+.banner h2{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.banner p{
+  color:#aaa;
+}
+
+/* CART */
+.cart{
+  position:fixed;
+  right:20px;
+  top:20px;
+  width:340px;
+  max-width:calc(100% - 40px);
+  background:#101010;
+  border:1px solid #444;
+  border-radius:16px;
+  padding:22px;
+  z-index:300;
+  display:none;
+  box-shadow:0 20px 60px rgba(0,0,0,.7);
+}
+
+.cart.active{
+  display:block;
+}
+
+.cartHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.close{
+  background:none;
+  border:0;
+  color:white;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.cartItem{
+  border-bottom:1px solid #292929;
+  padding:12px 0;
+}
+
+.cartTotal{
+  font-size:20px;
+  font-weight:bold;
+  margin:20px 0;
+}
+
+.whatsapp{
+  display:block;
+  text-align:center;
+  background:#00e676;
+  color:#000;
+  padding:14px;
+  border-radius:9px;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid #222;
+  padding:40px 5%;
+  color:#888;
+  text-align:center;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+  .top{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .actions{
+    width:100%;
+  }
+
+  .search{
+    width:100%;
+  }
+
+  .cartBtn{
+    white-space:nowrap;
+  }
+
+  .hero{
+    margin:20px 4%;
+    padding:35px 25px;
+    min-height:420px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .section{
+    padding-left:4%;
+    padding-right:4%;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .productInfo{
+    padding:12px;
+  }
+
+  .productInfo h3{
+    font-size:14px;
+  }
+
+  .price{
+    font-size:17px;
+  }
+
+  .add{
+    font-size:12px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- BARRA SUPERIOR -->
+<header>
 
-  <div class="topbar">
-    <span>🚚 Envíos a todo Paraguay</span>
-    <span>🛡️ Productos de calidad</span>
-    <span>💳 Pago contra entrega</span>
-  </div>
+<div class="top">
 
-  <!-- ENCABEZADO -->
+<div>
+<div class="logo">DZ IMPORTS</div>
+<div class="slogan">NUEVA ERA, MISMA PASIÓN</div>
+</div>
 
-  <header>
+<div class="actions">
 
-    <div class="logo">
-      <h1>DZ IMPORTS</h1>
-      <p>NUEVA ERA, MISMA PASIÓN</p>
-    </div>
+<input
+class="search"
+id="search"
+type="search"
+placeholder="¿Qué estás buscando?"
+oninput="buscar()"
+>
 
-    <div class="search">
-      <input type="text" placeholder="¿Qué estás buscando?">
-      <span>⌕</span>
-    </div>
+<button class="cartBtn" onclick="abrirCarrito()">
+🛒 Carrito (<span id="cantidad">0</span>)
+</button>
 
-    <div class="account">
-      👤 Mi cuenta &nbsp;&nbsp; 🛒 Carrito
-    </div>
+</div>
 
-  </header>
+</div>
 
-  <!-- MENÚ -->
+<nav>
+<button onclick="filtrar('todos')">INICIO</button>
+<button onclick="filtrar('remeras')">REMERAS</button>
+<button onclick="filtrar('shorts')">SHORTS</button>
+<button onclick="filtrar('conjuntos')">CONJUNTOS</button>
+</nav>
 
-  <nav>
-    <a href="#">INICIO</a>
-    <a href="#">REMERAS</a>
-    <a href="#">POLOS</a>
-    <a href="#">SHORTS</a>
-    <a href="#">ZAPATILLAS</a>
-    <a href="#">CANGURAS</a>
-    <a href="#">ACCESORIOS</a>
-    <a href="#">OFERTAS</a>
-    <a href="#">CONTACTO</a>
-  </nav>
+</header>
 
-  <!-- HERO -->
 
-  <section class="hero">
+<section class="hero">
 
-    <div class="hero-content">
+<div>
 
-      <small>DZ IMPORTS PRESENTA</small>
+<small>DZ IMPORTS PRESENTA</small>
 
-      <h2>NUEVA<br>COLECCIÓN</h2>
+<h1>NUEVA<br>COLECCIÓN</h1>
 
-      <p>
-        Remeras, polos, shorts, canguros y zapatillas.
-        Descubrí nuestros nuevos productos.
-      </p>
+<p>
+Remeras, shorts y conjuntos seleccionados para tu estilo.
+Encontrá tus próximos favoritos en DZ Imports.
+</p>
 
-      <a class="button" href="#productos">
-        VER PRODUCTOS →
-      </a>
+<button onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">
+VER PRODUCTOS →
+</button>
 
-    </div>
+</div>
 
-  </section>
+</section>
 
-  <!-- PRODUCTOS -->
 
-  <section class="section" id="productos">
+<section class="section" id="productos">
 
-    <div class="section-title">
-      <h2>PRODUCTOS DESTACADOS</h2>
-      <a href="#">Ver todos →</a>
-    </div>
+<div class="sectionTitle">
+<h2>Productos destacados</h2>
+</div>
 
-    <div class="products">
+<div class="products" id="listaProductos"></div>
 
-      <div class="product">
-        <div class="product-image">👕</div>
-        <div class="product-info">
-          <h3>Nike Polo</h3>
-          <div class="price">Gs. 165.000</div>
-          <button class="buy">🛒 COMPRAR</button>
-        </div>
-      </div>
+</section>
 
-      <div class="product">
-        <div class="product-image">👕</div>
-        <div class="product-info">
-          <h3>Tommy Remera</h3>
-          <div class="price">Gs. 120.000</div>
-          <button class="buy">🛒 COMPRAR</button>
-        </div>
-      </div>
 
-      <div class="product">
-        <div class="product-image">👟</div>
-        <div class="product-info">
-          <h3>Nike Air Force</h3>
-          <div class="price">Gs. 280.000</div>
-          <button class="buy">🛒 COMPRAR</button>
-        </div>
-      </div>
+<div class="banner">
 
-      <div class="product">
-        <div class="product-image">🩳</div>
-        <div class="product-info">
-          <h3>Nike Short</h3>
-          <div class="price">Gs. 135.000</div>
-          <button class="buy">🛒 COMPRAR</button>
-        </div>
-      </div>
+<h2>🚚 PEDIDOS POR WHATSAPP</h2>
 
-      <div class="product">
-        <div class="product-image">👟</div>
-        <div class="product-info">
-          <h3>Nike Dunk</h3>
-          <div class="price">Gs. 270.000</div>
-          <button class="buy">🛒 COMPRAR</button>
-        </div>
-      </div>
+<p>
+Elegí tus productos, agregalos al carrito y enviá tu pedido directamente.
+</p>
 
-    </div>
+</div>
 
-  </section>
 
-  <!-- BANNERS -->
+<footer>
 
-  <section class="section">
+<strong>DZ IMPORTS</strong>
 
-    <div class="banners">
+<br><br>
 
-      <div class="banner">
-        <small>DZ IMPORTS</small>
-        <h2>Variedad de zapatillas</h2>
-        <p>Modelos disponibles para diferentes estilos.</p>
-        <a class="button" href="#">VER AHORA →</a>
-      </div>
+NUEVA ERA, MISMA PASIÓN
 
-      <div class="banner">
-        <small>NUEVA COLECCIÓN</small>
-        <h2>Remeras, polos y shorts</h2>
-        <p>Encontrá tu próximo outfit.</p>
-        <a class="button" href="#">VER AHORA →</a>
-      </div>
+<br><br>
 
-    </div>
+© 2026 DZ Imports
 
-  </section>
+</footer>
 
-  <!-- MARCAS -->
 
-  <section class="section">
+<!-- CARRITO -->
 
-    <div class="section-title">
-      <h2>MARCAS DESTACADAS</h2>
-    </div>
+<div class="cart" id="cart">
 
-    <div class="brands">
+<div class="cartHeader">
 
-      <div class="brand">NIKE</div>
-      <div class="brand">ADIDAS</div>
-      <div class="brand">TOMMY</div>
-      <div class="brand">LACOSTE</div>
-      <div class="brand">JORDAN</div>
-      <div class="brand">VOSS</div>
+<h2>🛒 Mi carrito</h2>
 
-    </div>
+<button class="close" onclick="cerrarCarrito()">×</button>
 
-  </section>
+</div>
 
-  <!-- BENEFICIOS -->
+<div id="itemsCarrito"></div>
 
-  <div class="benefits">
+<div class="cartTotal">
+Total: Gs. <span id="total">0</span>
+</div>
 
-    <div class="benefit">
-      <h3>🚚 ENVÍOS</h3>
-      <p>Envíos a todo Paraguay.</p>
-    </div>
+<a
+id="whatsapp"
+class="whatsapp"
+target="_blank"
+href="#"
+>
+PEDIR POR WHATSAPP
+</a>
 
-    <div class="benefit">
-      <h3>🛡️ CALIDAD</h3>
-      <p>Productos seleccionados.</p>
-    </div>
+</div>
 
-    <div class="benefit">
-      <h3>💳 PAGOS</h3>
-      <p>Transferencia y efectivo.</p>
-    </div>
 
-  </div>
+<script>
 
-  <!-- FOOTER -->
+/*
+  FOTOS SUBIDAS A TU REPOSITORIO
+*/
 
-  <footer>
+const fotos = [
+"0b04511f-9861-4cbc-ae93-ba125faabb6f.jpeg",
+"11c50db7-2937-4d7e-ba98-a19a20dd1eef.jpeg",
+"186b8117-dba7-4c89-a588-36bfc7499f13.jpeg",
+"27c31dc8-bf1c-44cb-bb61-6ae67422b3ff.jpeg",
+"310dd4f9-5f2e-463f-9c01-8d8f9e75c3ab.jpeg",
+"323d6e74-2015-42a7-a4fe-deaf91002141.jpeg",
+"79be57b0-db43-494f-975d-537b2ad2d86e.jpeg",
+"a095bdc2-d678-4d00-b70f-f15235f8f6ed.jpeg",
+"b56bea57-d7ae-419b-b011-de7cea44d669.jpeg",
+"db7962cf-fadc-4141-a04a-2000d62c538a.jpeg",
+"eaf4484f-0887-405c-9599-c3a1aa2e2345.jpeg"
+];
 
-    <strong>DZ IMPORTS</strong>
 
-    <p style="margin-top:10px;">
-      Nueva era, misma pasión.
-    </p>
+/*
+  PRODUCTOS
+*/
 
-    <p style="margin-top:20px;">
-      © 2026 DZ Imports
-    </p>
+const productos = [
 
-  </footer>
+{
+nombre:"Remera Jordan Blanca",
+precio:130000,
+talle:"M",
+categoria:"remeras",
+foto:fotos[0]
+},
+
+{
+nombre:"Short Jordan Negro",
+precio:120000,
+talle:"M",
+categoria:"shorts",
+foto:fotos[1]
+},
+
+{
+nombre:"Short Jordan",
+precio:120000,
+talle:"M",
+categoria:"shorts",
+foto:fotos[2]
+},
+
+{
+nombre:"Short Lacoste Negro",
+precio:120000,
+talle:"M",
+categoria:"shorts",
+foto:fotos[3]
+},
+
+{
+nombre:"Short Lacoste Azul",
+precio:120000,
+talle:"M",
+categoria:"shorts",
+foto:fotos[4]
+},
+
+{
+nombre:"Short Armani Negro",
+precio:120000,
+talle:"M",
+categoria:"shorts",
+foto:fotos[5]
+},
+
+{
+nombre:"Short Armani Azul",
+precio:120000,
+talle:"M",
+categoria:"shorts",
+foto:fotos[6]
+},
+
+{
+nombre:"Conjunto Nike Azul",
+precio:150000,
+talle:"M",
+categoria:"conjuntos",
+foto:fotos[7]
+}
+
+];
+
+
+let carrito=[];
+
+
+/*
+  MOSTRAR PRODUCTOS
+*/
+
+function mostrarProductos(lista=productos){
+
+const contenedor=document.getElementById("listaProductos");
+
+contenedor.innerHTML="";
+
+lista.forEach((p,index)=>{
+
+contenedor.innerHTML+=`
+
+<div class="product">
+
+<img
+class="productImage"
+src="${p.foto}"
+alt="${p.nombre}"
+>
+
+<div class="productInfo">
+
+<h3>${p.nombre}</h3>
+
+<div class="price">
+Gs. ${p.precio.toLocaleString("es-PY")}
+</div>
+
+<div class="size">
+Talle disponible: ${p.talle}
+</div>
+
+<button class="add" onclick="agregar(${index})">
+AGREGAR AL CARRITO
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/*
+  CARRITO
+*/
+
+function agregar(index){
+
+carrito.push(productos[index]);
+
+actualizarCarrito();
+
+abrirCarrito();
+
+}
+
+
+function actualizarCarrito(){
+
+document.getElementById("cantidad").innerText=carrito.length;
+
+const contenedor=document.getElementById("itemsCarrito");
+
+contenedor.innerHTML="";
+
+let total=0;
+
+carrito.forEach((p,index)=>{
+
+total+=p.precio;
+
+contenedor.innerHTML+=`
+
+<div class="cartItem">
+
+<strong>${p.nombre}</strong>
+
+<br>
+
+Gs. ${p.precio.toLocaleString("es-PY")}
+
+<br>
+
+<button
+onclick="eliminar(${index})"
+style="margin-top:7px;background:none;color:#aaa;border:0;cursor:pointer;"
+>
+Eliminar
+</button>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("total").innerText=
+total.toLocaleString("es-PY");
+
+
+let mensaje="Hola DZ Imports 👋%0A%0AQuiero realizar este pedido:%0A%0A";
+
+carrito.forEach(p=>{
+
+mensaje+=
+"• "+p.nombre+
+" - Gs. "+
+p.precio.toLocaleString("es-PY")+
+" - Talle "+p.talle+
+"%0A";
+
+});
+
+mensaje+=
+"%0ATotal: Gs. "+
+total.toLocaleString("es-PY");
+
+
+// IMPORTANTE:
+// CAMBIAR ESTE NUMERO POR TU WHATSAPP
+const numero="595XXXXXXXXX";
+
+document.getElementById("whatsapp").href=
+"https://wa.me/"+numero+"?text="+mensaje;
+
+}
+
+
+function eliminar(index){
+
+carrito.splice(index,1);
+
+actualizarCarrito();
+
+}
+
+
+function abrirCarrito(){
+
+document.getElementById("cart").classList.add("active");
+
+}
+
+
+function cerrarCarrito(){
+
+document.getElementById("cart").classList.remove("active");
+
+}
+
+
+/*
+  FILTROS
+*/
+
+function filtrar(categoria){
+
+if(categoria==="todos"){
+
+mostrarProductos();
+
+return;
+
+}
+
+mostrarProductos(
+productos.filter(p=>p.categoria===categoria)
+);
+
+}
+
+
+/*
+  BUSCADOR
+*/
+
+function buscar(){
+
+const texto=
+document.getElementById("search").value.toLowerCase();
+
+const resultados=
+productos.filter(p=>
+p.nombre.toLowerCase().includes(texto)
+);
+
+mostrarProductos(resultados);
+
+}
+
+
+mostrarProductos();
+
+</script>
 
 </body>
 </html>
