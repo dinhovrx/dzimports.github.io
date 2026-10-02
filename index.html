@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
 <title>DZ Imports | Nueva era, misma pasión</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -18,9 +24,9 @@ html{
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
   background:#050505;
   color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 button,
@@ -38,15 +44,14 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(5,5,5,.96);
-  border-bottom:1px solid #252525;
-  backdrop-filter:blur(12px);
+  background:#050505;
+  border-bottom:1px solid #292929;
 }
 
 .header{
   max-width:1200px;
   margin:auto;
-  padding:18px 22px;
+  padding:20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -56,28 +61,24 @@ header{
 .logo{
   font-size:28px;
   font-weight:900;
-  letter-spacing:5px;
+  letter-spacing:6px;
 }
 
 .tagline{
-  color:#aaa;
+  color:#999;
   font-size:11px;
   letter-spacing:4px;
-  margin-top:5px;
+  margin-top:7px;
 }
 
 .cart-button{
   background:#fff;
   color:#000;
   border:0;
-  border-radius:10px;
-  padding:13px 18px;
+  border-radius:12px;
+  padding:15px 20px;
+  font-size:15px;
   font-weight:800;
-  font-size:14px;
-}
-
-.cart-button:hover{
-  background:#ddd;
 }
 
 /* HERO */
@@ -87,23 +88,27 @@ header{
   margin:25px auto;
   padding:80px 35px;
   border:1px solid #292929;
-  border-radius:20px;
+  border-radius:25px;
   background:
-    radial-gradient(circle at 75% 30%,#252525 0%,#111 25%,#050505 65%);
+    radial-gradient(
+      circle at 75% 30%,
+      #252525 0%,
+      #111 25%,
+      #050505 65%
+    );
 }
 
 .hero-small{
-  color:#aaa;
+  color:#999;
   font-size:13px;
   letter-spacing:5px;
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:64px;
+  font-size:65px;
   line-height:.95;
-  max-width:650px;
-  margin-bottom:22px;
+  margin-bottom:25px;
 }
 
 .hero p{
@@ -118,37 +123,33 @@ header{
   background:#fff;
   color:#000;
   border:0;
-  border-radius:9px;
-  padding:16px 25px;
+  border-radius:10px;
+  padding:17px 25px;
   font-size:15px;
   font-weight:900;
 }
 
-.hero-button:hover{
-  background:#ddd;
-}
-
-/* CONTROLES */
+/* BUSCADOR */
 
 .controls{
   max-width:1200px;
   margin:35px auto 20px;
-  padding:0 22px;
+  padding:0 20px;
 }
 
 .search-box{
   width:100%;
+  padding:18px;
   background:#111;
   color:#fff;
   border:1px solid #333;
-  border-radius:10px;
-  padding:16px 18px;
-  font-size:16px;
+  border-radius:12px;
+  font-size:17px;
   outline:none;
 }
 
-.search-box:focus{
-  border-color:#777;
+.search-box::placeholder{
+  color:#999;
 }
 
 .categories{
@@ -159,17 +160,16 @@ header{
 }
 
 .category-button{
-  white-space:nowrap;
+  flex:none;
   background:#111;
   color:#fff;
   border:1px solid #333;
   border-radius:25px;
-  padding:11px 18px;
-  font-weight:700;
+  padding:12px 20px;
+  font-weight:800;
 }
 
-.category-button.active,
-.category-button:hover{
+.category-button.active{
   background:#fff;
   color:#000;
 }
@@ -178,18 +178,18 @@ header{
 
 .products-title{
   max-width:1200px;
-  margin:25px auto 10px;
-  padding:0 22px;
+  margin:35px auto 20px;
+  padding:0 20px;
 }
 
 .products-title h2{
-  font-size:30px;
+  font-size:40px;
 }
 
 .products{
   max-width:1200px;
-  margin:20px auto 70px;
-  padding:0 22px;
+  margin:0 auto 70px;
+  padding:0 20px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:20px;
@@ -198,31 +198,16 @@ header{
 .product{
   background:#111;
   border:1px solid #292929;
-  border-radius:15px;
+  border-radius:16px;
   overflow:hidden;
-  transition:.2s ease;
-}
-
-.product:hover{
-  transform:translateY(-3px);
-  border-color:#555;
 }
 
 .product-image{
   width:100%;
   height:320px;
-  background:#0b0b0b;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-.product-image img{
-  width:100%;
-  height:100%;
   object-fit:cover;
   display:block;
+  background:#0b0b0b;
 }
 
 .product-info{
@@ -249,38 +234,36 @@ header{
 
 .add-button{
   width:100%;
+  background:#fff;
+  color:#000;
   border:0;
   border-radius:9px;
   padding:14px;
-  background:#fff;
-  color:#000;
-  font-weight:900;
   font-size:14px;
-}
-
-.add-button:hover{
-  background:#ddd;
+  font-weight:900;
 }
 
 .no-products{
   grid-column:1/-1;
   text-align:center;
-  padding:60px 20px;
   color:#777;
+  padding:70px 20px;
+  font-size:20px;
 }
 
 /* FOOTER */
 
 footer{
-  border-top:1px solid #222;
+  border-top:1px solid #292929;
   text-align:center;
-  padding:45px 20px;
+  padding:55px 20px;
   color:#777;
 }
 
 footer strong{
   color:#fff;
-  letter-spacing:3px;
+  font-size:25px;
+  letter-spacing:5px;
 }
 
 /* CARRITO */
@@ -302,7 +285,7 @@ footer strong{
   right:0;
   top:0;
   width:100%;
-  max-width:440px;
+  max-width:450px;
   height:100%;
   background:#101010;
   border-left:1px solid #333;
@@ -318,20 +301,20 @@ footer strong{
 }
 
 .cart-header h2{
-  font-size:25px;
+  font-size:28px;
 }
 
 .close-cart{
   background:none;
   border:0;
   color:#fff;
-  font-size:32px;
+  font-size:35px;
 }
 
 .cart-empty{
   text-align:center;
   color:#777;
-  padding:60px 10px;
+  padding:70px 10px;
 }
 
 .cart-item{
@@ -346,7 +329,6 @@ footer strong{
   height:85px;
   object-fit:cover;
   border-radius:8px;
-  background:#080808;
 }
 
 .cart-item-content{
@@ -366,23 +348,23 @@ footer strong{
 .quantity{
   display:flex;
   align-items:center;
-  gap:9px;
-  margin-top:9px;
+  gap:10px;
+  margin-top:10px;
 }
 
 .quantity button{
-  width:27px;
-  height:27px;
+  width:30px;
+  height:30px;
   border:0;
-  border-radius:5px;
-  font-weight:bold;
+  border-radius:6px;
+  font-weight:900;
 }
 
 .remove-button{
   background:none;
   border:0;
   color:#777;
-  margin-top:7px;
+  margin-top:8px;
   font-size:12px;
 }
 
@@ -395,33 +377,33 @@ footer strong{
 .cart-total{
   display:flex;
   justify-content:space-between;
-  font-size:21px;
+  font-size:22px;
   font-weight:900;
-  margin-bottom:15px;
+  margin-bottom:18px;
 }
 
 .whatsapp-button{
   width:100%;
-  border:0;
-  border-radius:10px;
-  padding:16px;
   background:#25D366;
   color:#fff;
-  font-weight:900;
+  border:0;
+  border-radius:10px;
+  padding:17px;
   font-size:16px;
+  font-weight:900;
 }
 
 .clear-button{
   width:100%;
   margin-top:10px;
-  border:1px solid #444;
-  border-radius:9px;
-  padding:12px;
   background:#151515;
   color:#aaa;
+  border:1px solid #444;
+  border-radius:10px;
+  padding:13px;
 }
 
-/* RESPONSIVE */
+/* CELULAR */
 
 @media(max-width:950px){
 
@@ -434,19 +416,22 @@ footer strong{
 @media(max-width:700px){
 
   .header{
-    padding:15px;
+    padding:16px;
   }
 
   .logo{
     font-size:23px;
+    letter-spacing:5px;
   }
 
   .tagline{
     font-size:9px;
+    letter-spacing:3px;
   }
 
   .cart-button{
-    padding:11px 12px;
+    padding:12px;
+    font-size:13px;
   }
 
   .hero{
@@ -455,27 +440,29 @@ footer strong{
   }
 
   .hero h1{
-    font-size:43px;
+    font-size:45px;
   }
 
   .hero p{
     font-size:16px;
   }
 
-  .products{
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    padding:0 12px;
+  .controls{
+    padding:0 15px;
   }
 
-  .controls,
   .products-title{
-    padding-left:12px;
-    padding-right:12px;
+    padding:0 15px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    padding:0 15px;
   }
 
   .product-image{
-    height:240px;
+    height:220px;
   }
 
   .product-info{
@@ -483,27 +470,11 @@ footer strong{
   }
 
   .product-name{
-    font-size:15px;
+    font-size:14px;
   }
 
   .product-price{
-    font-size:18px;
-  }
-
-}
-
-@media(max-width:420px){
-
-  .hero h1{
-    font-size:36px;
-  }
-
-  .products{
-    gap:9px;
-  }
-
-  .product-image{
-    height:210px;
+    font-size:17px;
   }
 
   .add-button{
@@ -512,122 +483,175 @@ footer strong{
   }
 
 }
+
+@media(max-width:420px){
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .products{
+    gap:8px;
+  }
+
+  .product-image{
+    height:200px;
+  }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
-  <div class="header">
+<div class="header">
 
-    <div>
-      <div class="logo">DZ IMPORTS</div>
-      <div class="tagline">NUEVA ERA, MISMA PASIÓN</div>
-    </div>
+<div>
 
-    <button class="cart-button" onclick="openCart()">
-      🛒 Carrito (<span id="cart-count">0</span>)
-    </button>
+<div class="logo">
+DZ IMPORTS
+</div>
 
-  </div>
+<div class="tagline">
+NUEVA ERA, MISMA PASIÓN
+</div>
+
+</div>
+
+<button
+class="cart-button"
+onclick="openCart()"
+>
+
+🛒 Carrito
+(<span id="cart-count">0</span>)
+
+</button>
+
+</div>
 
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
-  <div class="hero-small">
-    DZ IMPORTS PRESENTA
-  </div>
+<div class="hero-small">
+DZ IMPORTS PRESENTA
+</div>
 
-  <h1>
-    NUEVA<br>
-    COLECCIÓN
-  </h1>
+<h1>
+NUEVA<br>
+COLECCIÓN
+</h1>
 
-  <p>
-    Remeras, shorts y conjuntos.
-    Descubrí nuestros productos disponibles.
-  </p>
+<p>
+Remeras, shorts y conjuntos.
+Descubrí nuestros productos disponibles.
+</p>
 
-  <button
-    class="hero-button"
-    onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})"
-  >
-    VER PRODUCTOS →
-  </button>
+<button
+class="hero-button"
+onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})"
+>
+
+VER PRODUCTOS →
+
+</button>
 
 </section>
 
+
+<!-- BUSCADOR -->
 
 <section class="controls">
 
-  <input
-    id="search"
-    class="search-box"
-    type="text"
-    placeholder="¿Qué estás buscando?"
-    oninput="renderProducts()"
-  >
+<input
+id="search"
+class="search-box"
+type="text"
+placeholder="¿Qué estás buscando?"
+oninput="renderProducts()"
+>
 
-  <div class="categories">
 
-    <button
-      class="category-button active"
-      onclick="changeCategory('Todos',this)"
-    >
-      TODOS
-    </button>
+<div class="categories">
 
-    <button
-      class="category-button"
-      onclick="changeCategory('Remeras',this)"
-    >
-      REMERAS
-    </button>
+<button
+class="category-button active"
+onclick="changeCategory('Todos',this)"
+>
+TODOS
+</button>
 
-    <button
-      class="category-button"
-      onclick="changeCategory('Shorts',this)"
-    >
-      SHORTS
-    </button>
+<button
+class="category-button"
+onclick="changeCategory('Remeras',this)"
+>
+REMERAS
+</button>
 
-    <button
-      class="category-button"
-      onclick="changeCategory('Conjuntos',this)"
-    >
-      CONJUNTOS
-    </button>
+<button
+class="category-button"
+onclick="changeCategory('Shorts',this)"
+>
+SHORTS
+</button>
 
-  </div>
+<button
+class="category-button"
+onclick="changeCategory('Conjuntos',this)"
+>
+CONJUNTOS
+</button>
+
+</div>
 
 </section>
 
 
+<!-- TITULO -->
+
 <div class="products-title">
-  <h2>Productos</h2>
+
+<h2>
+Productos
+</h2>
+
 </div>
 
 
-<section
-  class="products"
-  id="productos"
-></section>
+<!-- PRODUCTOS -->
 
+<section
+class="products"
+id="productos"
+>
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-  <strong>DZ IMPORTS</strong>
+<strong>
+DZ IMPORTS
+</strong>
 
-  <br><br>
+<br><br>
 
-  Nueva era, misma pasión.
+Nueva era, misma pasión.
 
-  <br><br>
+<br><br>
 
-  © 2026 DZ Imports
+© 2026 DZ Imports
 
 </footer>
 
@@ -635,48 +659,663 @@ footer strong{
 <!-- CARRITO -->
 
 <div
-  class="cart-overlay"
-  id="cart-overlay"
-  onclick="closeCartOutside(event)"
+class="cart-overlay"
+id="cart-overlay"
+onclick="closeCartOutside(event)"
 >
 
-  <div
-    class="cart"
-    onclick="event.stopPropagation()"
-  >
+<div
+class="cart"
+onclick="event.stopPropagation()"
+>
 
-    <div class="cart-header">
+<div class="cart-header">
 
-      <h2>Mi carrito</h2>
+<h2>
+Mi carrito
+</h2>
 
-      <button
-        class="close-cart"
-        onclick="closeCart()"
-      >
-        ×
-      </button>
+<button
+class="close-cart"
+onclick="closeCart()"
+>
+×
+</button>
 
-    </div>
+</div>
 
-    <div id="cart-items"></div>
 
-    <div class="cart-bottom">
+<div id="cart-items">
+</div>
 
-      <div class="cart-total">
 
-        <span>Total</span>
+<div class="cart-bottom">
 
-        <span id="cart-total">
-          Gs. 0
-        </span>
+<div class="cart-total">
 
-      </div>
+<span>
+Total
+</span>
 
-      <button
-        class="whatsapp-button"
-        onclick="sendWhatsApp()"
-      >
-        📲 PEDIR POR WHATSAPP
-      </button>
+<span id="cart-total">
+Gs. 0
+</span>
 
-      <button
+</div>
+
+
+<button
+class="whatsapp-button"
+onclick="sendWhatsApp()"
+>
+
+📲 PEDIR POR WHATSAPP
+
+</button>
+
+
+<button
+class="clear-button"
+onclick="clearCart()"
+>
+
+Vaciar carrito
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* WHATSAPP */
+
+const WHATSAPP = "595987213496";
+
+
+/* PRODUCTOS */
+
+const products = [
+
+{
+id:1,
+name:"Remera Jordan Blanca",
+category:"Remeras",
+price:130000,
+size:"M",
+image:"323d6e74-2015-42a7-a4fe-deaf91002141.jpeg"
+},
+
+{
+id:2,
+name:"Short Jordan",
+category:"Shorts",
+price:120000,
+size:"M",
+image:"79be57b0-db43-494f-975d-537b2ad2d86e.jpeg"
+},
+
+{
+id:3,
+name:"Short Lacoste Negro",
+category:"Shorts",
+price:120000,
+size:"M",
+image:"186b8117-dba7-4c89-a588-36bfc7499f13.jpeg"
+},
+
+{
+id:4,
+name:"Short Lacoste Azul",
+category:"Shorts",
+price:120000,
+size:"M",
+image:"eaf4484f-0887-405c-9599-c3a1aa2e2345.jpeg"
+},
+
+{
+id:5,
+name:"Short Armani Negro",
+category:"Shorts",
+price:120000,
+size:"M",
+image:"a095bdc2-d678-4d00-b70f-f15235f8f6ed.jpeg"
+},
+
+{
+id:6,
+name:"Short Armani Azul",
+category:"Shorts",
+price:120000,
+size:"M",
+image:"db7962cf-fadc-4141-a04a-2000d62c538a.jpeg"
+},
+
+{
+id:7,
+name:"Conjunto Nike Azul",
+category:"Conjuntos",
+price:150000,
+size:"M",
+image:"D0132E48-527A-4D80-BF66-68940B69AA3E.png"
+}
+
+];
+
+
+let category = "Todos";
+
+let cart = [];
+
+
+/* FORMATO DE PRECIO */
+
+function money(number){
+
+return "Gs. " +
+number.toLocaleString("es-PY");
+
+}
+
+
+/* MOSTRAR PRODUCTOS */
+
+function renderProducts(){
+
+const container =
+document.getElementById("productos");
+
+const search =
+document
+.getElementById("search")
+.value
+.toLowerCase()
+.trim();
+
+
+const filtered =
+products.filter(product => {
+
+const categoryMatch =
+category === "Todos" ||
+product.category === category;
+
+const searchMatch =
+product.name
+.toLowerCase()
+.includes(search);
+
+return categoryMatch && searchMatch;
+
+});
+
+
+container.innerHTML = "";
+
+
+if(filtered.length === 0){
+
+container.innerHTML = `
+
+<div class="no-products">
+
+No encontramos productos.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+filtered.forEach(product => {
+
+const card =
+document.createElement("article");
+
+card.className = "product";
+
+
+card.innerHTML = `
+
+<img
+class="product-image"
+src="${product.image}"
+alt="${product.name}"
+>
+
+
+<div class="product-info">
+
+<div class="product-name">
+
+${product.name}
+
+</div>
+
+
+<div class="product-size">
+
+Talle ${product.size}
+
+</div>
+
+
+<div class="product-price">
+
+${money(product.price)}
+
+</div>
+
+
+<button
+class="add-button"
+onclick="addToCart(${product.id})"
+>
+
+AGREGAR AL CARRITO
+
+</button>
+
+</div>
+
+`;
+
+
+container.appendChild(card);
+
+});
+
+}
+
+
+/* CATEGORIAS */
+
+function changeCategory(
+newCategory,
+button
+){
+
+category = newCategory;
+
+
+document
+.querySelectorAll(".category-button")
+.forEach(btn => {
+
+btn.classList.remove("active");
+
+});
+
+
+button.classList.add("active");
+
+
+renderProducts();
+
+}
+
+
+/* AGREGAR AL CARRITO */
+
+function addToCart(id){
+
+const product =
+products.find(
+product => product.id === id
+);
+
+
+const existing =
+cart.find(
+item => item.id === id
+);
+
+
+if(existing){
+
+existing.quantity++;
+
+}else{
+
+cart.push({
+
+...product,
+
+quantity:1
+
+});
+
+}
+
+
+updateCart();
+
+openCart();
+
+}
+
+
+/* ACTUALIZAR CARRITO */
+
+function updateCart(){
+
+const count =
+cart.reduce(
+(total,item) =>
+total + item.quantity,
+0
+);
+
+
+document
+.getElementById("cart-count")
+.textContent = count;
+
+
+const container =
+document.getElementById("cart-items");
+
+
+if(cart.length === 0){
+
+container.innerHTML = `
+
+<div class="cart-empty">
+
+Tu carrito está vacío.
+
+</div>
+
+`;
+
+document
+.getElementById("cart-total")
+.textContent = "Gs. 0";
+
+return;
+
+}
+
+
+container.innerHTML = "";
+
+
+cart.forEach(item => {
+
+const div =
+document.createElement("div");
+
+
+div.className =
+"cart-item";
+
+
+div.innerHTML = `
+
+<img
+class="cart-item-image"
+src="${item.image}"
+>
+
+
+<div class="cart-item-content">
+
+<div class="cart-item-name">
+
+${item.name}
+
+</div>
+
+
+<div class="cart-item-price">
+
+${money(item.price)}
+
+</div>
+
+
+<div class="quantity">
+
+<button
+onclick="changeQuantity(${item.id},-1)"
+>
+−
+</button>
+
+
+<span>
+
+${item.quantity}
+
+</span>
+
+
+<button
+onclick="changeQuantity(${item.id},1)"
+>
++
+</button>
+
+</div>
+
+
+<button
+class="remove-button"
+onclick="removeFromCart(${item.id})"
+>
+
+Eliminar
+
+</button>
+
+</div>
+
+`;
+
+
+container.appendChild(div);
+
+});
+
+
+const total =
+cart.reduce(
+(sum,item) =>
+sum +
+item.price *
+item.quantity,
+0
+);
+
+
+document
+.getElementById("cart-total")
+.textContent =
+money(total);
+
+}
+
+
+/* CANTIDAD */
+
+function changeQuantity(
+id,
+amount
+){
+
+const item =
+cart.find(
+item => item.id === id
+);
+
+
+if(!item){
+
+return;
+
+}
+
+
+item.quantity += amount;
+
+
+if(item.quantity <= 0){
+
+cart =
+cart.filter(
+item => item.id !== id
+);
+
+}
+
+
+updateCart();
+
+}
+
+
+/* ELIMINAR */
+
+function removeFromCart(id){
+
+cart =
+cart.filter(
+item => item.id !== id
+);
+
+updateCart();
+
+}
+
+
+/* VACIAR */
+
+function clearCart(){
+
+cart = [];
+
+updateCart();
+
+}
+
+
+/* ABRIR CARRITO */
+
+function openCart(){
+
+document
+.getElementById("cart-overlay")
+.classList.add("show");
+
+}
+
+
+/* CERRAR CARRITO */
+
+function closeCart(){
+
+document
+.getElementById("cart-overlay")
+.classList.remove("show");
+
+}
+
+
+/* CERRAR AL TOCAR AFUERA */
+
+function closeCartOutside(event){
+
+if(
+event.target.id ===
+"cart-overlay"
+){
+
+closeCart();
+
+}
+
+}
+
+
+/* WHATSAPP */
+
+function sendWhatsApp(){
+
+if(cart.length === 0){
+
+alert(
+"Tu carrito está vacío."
+);
+
+return;
+
+}
+
+
+let message =
+"Hola DZ Imports 👋\n\n" +
+"Quiero realizar este pedido:\n\n";
+
+
+cart.forEach(item => {
+
+message +=
+
+"• " +
+item.name +
+" — Talle " +
+item.size +
+" — Cantidad: " +
+item.quantity +
+" — " +
+money(
+item.price *
+item.quantity
+) +
+"\n";
+
+});
+
+
+const total =
+cart.reduce(
+(sum,item) =>
+sum +
+item.price *
+item.quantity,
+0
+);
+
+
+message +=
+"\nTotal: " +
+money(total);
+
+
+window.location.href =
+"https://wa.me/" +
+WHATSAPP +
+"?text=" +
+encodeURIComponent(message);
+
+}
+
+
+/* INICIAR */
+
+renderProducts();
+
+updateCart();
+
+</script>
+
+</body>
+
+</html>
